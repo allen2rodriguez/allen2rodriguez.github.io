@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allen's Portfolio</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- header design -->
+    <header class="header">
+        <a href="index.html" class="logo">Allen's Portfolio<span class="animate" style="--i:1;"></span></a>
+
+        <div class='bx bx-menu' id="menu-icon"></div>
+
+        <nav class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="projects.html">My Projects</a> 
+            <a href="contact.html">Contact Me</a> 
+
+            <span class="active-nav"></span>
+            <span class="animate" style="--i:1;"></span>
+        </nav>
+    </header>
+
+    <!-- home design -->
+    <section class="home show-animate" id="home">
+        <div class="home-content">
+            <h1>Hi, I'm <span>Allen</span> <span class="animate" style="--i:1;"></span></h1>
+            <h3>And I'm a <span id="element"></span></h3>
+
+            <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+            
+            <script>
+                var typed = new Typed('#element', {
+                  strings: ['Fullstack Devloper.', 'Engineer.', 'Businessman.', 'Really Cool Guy 👍'],
+                  typeSpeed: 85,
+                  backSpeed: 85,
+                  backDelay: 1000,
+                  loop: true
+                });
+              </script>
+
+            <p>Hey, so glad you could visit my page! This space is a reflection of my journey, passions, experiences that have shaped me. Feel free to explore the various sections to get a glimpse into my professional accomplishments, projects, and the skills that set me apart. Thank you for taking the time to learn more about me.
+
+            <div class="btn-box">
+                <a href="projects/RodriguezAllen-Resume.pdf" target="_blank" class="btn">My Resume</a>
+                <a href="contact.html" class="btn">Hire Me</a>
+            </div>        
+        
+            <!-- socials -->
+            <div class="socials">
+                <a href="https://github.com/allen2rodriguez" target="_blank"><i class='bx bxl-github' ></i></a>
+                <a href="https://www.instagram.com/allen2rodriguez/" target="_blank"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.linkedin.com/in/allen2rodriguez/" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+            </div>  
+        </div>
+
+        <!-- image of me -->
+        <div class="home-img">
+            <img src="images/home-img.png" alt="Picture of Me">
+        </div>
+    </section>
+
+     <!-- Footer Design -->
+     <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2024 Allen Inc. | All rights reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+    
+    <script src="js/script.js"></script>
+    
+</body>
+</html>

@@ -47,6 +47,19 @@ searchInput.addEventListener('input', () => {
     search(query);
 });
 
+// Require the reCAPTCHA
+function validateRecaptcha() {
+    var response = grecaptcha.getResponse();
+    if (response.length === 0) {
+        alert("Please complete the reCAPTCHA");
+        return false;
+    } else {
+        document.getElementById('g-recaptcha-response').value = response;
+        return true;
+    }
+}
+
+
 
 
 

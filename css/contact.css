@@ -71,3 +71,9 @@
     margin-top: 2rem;
     cursor: pointer;
 }
+
+.recaptcha-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

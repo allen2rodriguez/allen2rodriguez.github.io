@@ -450,7 +450,7 @@ section {
     }
 
     .recaptcha-container {
-        max-width: 50%;
+        width: 50%;
     }
 }
 

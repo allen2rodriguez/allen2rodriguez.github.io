@@ -448,6 +448,10 @@ section {
     .slider-container {
         height: auto;
     }
+
+    .recaptcha-container {
+        max-width: 50%;
+    }
 }
 
 @media (max-width: 430px) {

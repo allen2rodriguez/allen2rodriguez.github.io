@@ -1,0 +1,7 @@
+Next Time: 
+    Need decline button to go back to normal 
+
+Eventually:
+    Add in instagram hearts 
+    Create a google calendar event that is sent to both me and the girl
+    Prompt user for fav food, and activities 

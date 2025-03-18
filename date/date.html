@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Temp Name</title>
+
+    <!-- CSS -->
+    <style>
+        body 
+        {
+            background-color: pink;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        h1
+        {
+            color: purple;
+        }
+
+        button 
+        {
+            /* Make the sizing little bit bigger */
+            font-size: 20px;
+            border-color: purple;
+            border-radius: 15%;
+            color: purple;
+            background-color: pink;
+            pointer-events: visible;
+            cursor: pointer;
+        }
+
+        .popup
+        {
+            color: purple;
+            font-size: 40px;
+
+        }
+
+        .gif-container
+        {
+            display: flex;
+            justify-content: center; /* Centers horizontally */
+            align-items: center; /* Centers vertically */
+            height: 100vh; /* Make the container take full viewport height */
+        }
+
+        .gif
+        {
+            max-width: 100%; /* Ensure the image scales within the container */
+        height: auto;
+        }
+    </style>
+
+    <!-- JavaScript --> 
+    <script>    
+        document.addEventListener("DOMContentLoaded", function() 
+        {
+            let declinebtn = document.getElementById("decline");
+            let acceptbtn = document.getElementById("accept");
+            let gif = document.getElementById("gif");
+
+            // After pressing deline show gif and hide no button
+            declinebtn.onclick = function()
+            {
+                declinebtn.style.display = 'none';
+                gif.style.display = 'block'
+
+                // Hide the gif after 3 seconds and show the decline button again
+                setTimeout(function()
+                {
+                    gif.style.display = 'none';
+                    //declinebtn.style.display = 'block';
+                }, 3000); // 3 seconds
+            };
+            
+            // After pressing accept show popup
+            acceptbtn.onclick = function()
+            {
+                // Hide both buttons
+                acceptbtn.style.display = 'none';
+                declinebtn.style.display = 'none';
+
+                // Show the popup
+                let popup = document.getElementById("popup");
+                popup.style.display = 'block';
+            };
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Greetings and Salutations Fine Shyt</h1>
+    <h1>Would you like to go on a date?</h1>
+
+    <button id="accept" class="accept">Yes!</button>
+    <button id="decline" class="decline">No</button>
+
+    <!-- Pop up for the Deline button-->
+    <div class="gif-container" >
+        <img src="black-guy-saying-no-no.gif" alt="gif" id="gif" style="display:none;"> <!-- Consider just using the link in src: https://media.giphy.com/media/3o7aD2sa4v8qz5xk1G/giphy.gif-->
+    </div>
+
+
+    <!-- Pop up Screen that shows up after clicking Yes -->
+    <div id="popup" class="popup" style="display:none;">
+        <div class="popup-content">
+          <p>Perfect! When are you avalible</p>
+        </div>
+    </div>
+      
+</body>
+
+</html>

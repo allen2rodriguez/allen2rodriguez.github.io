@@ -10,33 +10,44 @@
     <style>
         body 
         {
-            background-color: pink;
+            background-color: #FFC0CB;
             text-align: center;
-            font-family: Arial, sans-serif;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
         }
 
         h1
         {
-            color: purple;
+            color: #C71585;
         }
 
         button 
         {
             /* Make the sizing little bit bigger */
             font-size: 20px;
-            border-color: purple;
-            border-radius: 15%;
-            color: purple;
-            background-color: pink;
+            border-color: #C71585;
+            border-radius: 10%;
+            color: #C71585;
+            background-color: #FFC0CB;
             pointer-events: visible;
             cursor: pointer;
+            width: 100px;
+            height: 40px;
         }
 
         .popup
         {
-            color: purple;
-            font-size: 40px;
+            color: #C71585;
+            font-size: 28px;
+            position: absolute;
+            top: 225px;
+        }
 
+        textarea
+        {
+            border-color: #C71585;
+            border-radius: 10px;
+            color: #C71585;
+            background-color: white;
         }
 
         .gif-container
@@ -44,13 +55,18 @@
             display: flex;
             justify-content: center; /* Centers horizontally */
             align-items: center; /* Centers vertically */
-            height: 100vh; /* Make the container take full viewport height */
+            height: 70vh; /* Make the container take full viewport height */
         }
 
         .gif
         {
             max-width: 100%; /* Ensure the image scales within the container */
-        height: auto;
+            height: auto;
+        }
+
+        .main-pic
+        {
+            max-width: 100%;
         }
     </style>
 
@@ -61,19 +77,22 @@
             let declinebtn = document.getElementById("decline");
             let acceptbtn = document.getElementById("accept");
             let gif = document.getElementById("gif");
+            let pic = document.getElementById("main-pic");
 
             // After pressing deline show gif and hide no button
             declinebtn.onclick = function()
             {
                 declinebtn.style.display = 'none';
                 gif.style.display = 'block'
+                pic.style.display = 'none';
 
                 // Hide the gif after 3 seconds and show the decline button again
                 setTimeout(function()
                 {
                     gif.style.display = 'none';
-                    //declinebtn.style.display = 'block';
+                    pic.style.display = 'block';
                 }, 3000); // 3 seconds
+
             };
             
             // After pressing accept show popup
@@ -82,7 +101,8 @@
                 // Hide both buttons
                 acceptbtn.style.display = 'none';
                 declinebtn.style.display = 'none';
-
+                pic.style.display = 'none';
+                
                 // Show the popup
                 let popup = document.getElementById("popup");
                 popup.style.display = 'block';
@@ -93,7 +113,7 @@
 
 <body>
     <h1>Greetings and Salutations Fine Shyt</h1>
-    <h1>Would you like to go on a date?</h1>
+    <h1>Would you like to go to the Gala with me?</h1>
 
     <button id="accept" class="accept">Yes!</button>
     <button id="decline" class="decline">No</button>
@@ -101,13 +121,29 @@
     <!-- Pop up for the Deline button-->
     <div class="gif-container" >
         <img src="black-guy-saying-no-no.gif" alt="gif" id="gif" style="display:none;"> <!-- Consider just using the link in src: https://media.giphy.com/media/3o7aD2sa4v8qz5xk1G/giphy.gif-->
+        <img src="Gala Date Night! - 2.jpeg" alt="date" id="main-pic" class="main-pic"> <!-- Consider just using the link in src: https://media.giphy.com/media/3o7aD2sa4v8qz5xk1G/giphy.gif-->
     </div>
 
 
     <!-- Pop up Screen that shows up after clicking Yes -->
     <div id="popup" class="popup" style="display:none;">
         <div class="popup-content">
-          <p>Perfect! When are you avalible</p>
+
+            <p>Great! Looking forward to it👍</p>
+            <p>please press the submit button so I can get the notification</p>
+
+            <form action="https://formspree.io/f/mgegbakj" method="post"> 
+    
+                <div class="text-area">
+                    <textarea name="message" cols="35" rows="10" placeholder="Any questions/comments/concerns speak now or forever hold your peace" required></textarea>
+                    <span class="focus"></span>
+                </div>
+
+                <div class="btn-box btns">
+                    <button type="submit" class="btn">Submit</button>
+                </div>
+
+            </form>
         </div>
     </div>
       
